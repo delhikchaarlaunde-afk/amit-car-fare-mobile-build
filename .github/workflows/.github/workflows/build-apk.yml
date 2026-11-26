@@ -6,6 +6,9 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,8 +27,8 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Extract project ZIP
-        run: unzip -q Amit_Car_Fare_MOBILE_BUILD.zip -d project
+      - name: Extract updated project ZIP
+        run: unzip -q Amit_Car_Fare_NO_OTP_PIN_1616_SOURCE.zip -d project
 
       - name: Build APK
         run: gradle --no-daemon -p project/AmitCarFare_OfflineMap assembleDebug
@@ -35,3 +38,4 @@ jobs:
         with:
           name: Amit-Car-Fare-APK
           path: project/AmitCarFare_OfflineMap/app/build/outputs/apk/debug/app-debug.apk
+          
