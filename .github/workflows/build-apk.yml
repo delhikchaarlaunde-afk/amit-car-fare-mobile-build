@@ -25,7 +25,7 @@ jobs:
           gradle-version: '8.9'
 
       - name: Extract project ZIP
-        run: unzip -q Amit_Car_Fare_MOBILE_BUILD.zip -d project
+        run: unzip -q Amit_Car_Fare_OTP_LOGIN_ADDED.zip -d project
 
       - name: Build APK
         run: gradle --no-daemon -p project/AmitCarFare_OfflineMap assembleDebug
